@@ -1,13 +1,12 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package model.interfaces;
 
+import java.util.List;
+
 /**
- *
- * @author Admin
+ * Interface CRUD tối giản cho manager
  */
-public class IManager {
-    
+public interface IManager<T> {
+    void add(T t);
+    void delete(String id);
+    List<T> getAll();
 }

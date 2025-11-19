@@ -1,13 +1,23 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package controller;
 
+import model.DangKy;
+import model.manager.DangKyManager;
+
+import java.util.List;
+
 /**
- *
- * @author Admin
+ * Controller cho chức năng đăng ký
  */
 public class DangKyController {
-    
+    private final DangKyManager manager;
+    public DangKyController(DangKyManager manager) { this.manager = manager; }
+
+    /**
+     * Thực hiện đăng ký; trả về null nếu thành công, hoặc chuỗi mô tả lỗi nếu thất bại.
+     */
+    public String register(DangKy dk) { return manager.register(dk); }
+
+    public boolean cancel(DangKy dk) { return manager.cancel(dk); }
+
+    public List<DangKy> getAll() { return manager.getAll(); }
 }

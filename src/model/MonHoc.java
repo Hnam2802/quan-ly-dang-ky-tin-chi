@@ -1,49 +1,33 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package model;
 
 /**
- *
- * @author Admin
+ * Môn học: chỉ chứa các thuộc tính theo yêu cầu
+ * - maMon: mã môn (3 chữ số)
+ * - tenMon: tên môn
+ * - tongSoTiet: tổng số tiết
+ * - loaiMon: loại môn (DAI_CUONG, CO_SO_NGANH, CN_BAT_BUOC, CN_TU_CHON)
  */
 public class MonHoc {
-    private static int tmp = 1;
-    private String maMonHoc, tenMon, loaiMonHoc;
-    private int soTiet;
-    public MonHoc() {
-        
+    private String maMon;
+    private String tenMon;
+    private int tongSoTiet;
+    private String loaiMon;
+
+    public MonHoc(String maMon, String tenMon, int tongSoTiet, String loaiMon) {
+        this.maMon = maMon;
+        this.tenMon = tenMon;
+        this.tongSoTiet = tongSoTiet;
+        this.loaiMon = loaiMon;
     }
-    public MonHoc(String ten, String loai, int sl) {
-        this.maMonHoc = String.format("%03d", tmp++);
-        this.tenMon = ten;
-        this.loaiMonHoc = loai;
-        this.soTiet = sl;
-    }
-    public void getTenMonHoc(String name) {
-        this.tenMon = name;
-    }
-    public void getLoaiMonHoc(String type) {
-        this.loaiMonHoc = type;
-    }
-    public void getSoTiet(int sl) {
-        this.soTiet = sl;
-    }
-    public String getTenMonHoc() {
-        return tenMon;
-    }
-    public String getMaMonHoc() {
-        return maMonHoc;
-    }
-    public String getLoaiMonHoc() {
-        return loaiMonHoc;
-    }
-    public int getSoTiet() {
-        return soTiet;
-    }
-    @Override 
+
+    // Getters
+    public String getMaMon() { return maMon; }
+    public String getTenMon() { return tenMon; }
+    public int getTongSoTiet() { return tongSoTiet; }
+    public String getLoaiMon() { return loaiMon; }
+
+    @Override
     public String toString() {
-        return getMaMonHoc() + " " + getTenMonHoc() + " " + getSoTiet() + " " + getLoaiMonHoc();
-    } 
+        return maMon + " - " + tenMon + " (" + tongSoTiet + " tiết)";
+    }
 }

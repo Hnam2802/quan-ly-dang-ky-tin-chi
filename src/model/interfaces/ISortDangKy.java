@@ -1,13 +1,12 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package model.interfaces;
 
+import model.DangKy;
+import java.util.List;
+
 /**
- *
- * @author Admin
+ * Sắp xếp danh sách đăng ký theo các tiêu chí đơn giản
  */
-public class ISortDangKy {
-    
+public interface ISortDangKy {
+    List<DangKy> sortBySinhVien(List<DangKy> list);
+    List<DangKy> sortByMonHoc(List<DangKy> list);
 }

@@ -1,13 +1,33 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package model.manager;
 
+import model.SinhVien;
+import model.interfaces.IManager;
+
+import java.util.ArrayList;
+import java.util.List;
+
 /**
- *
- * @author Admin
+ * Manager cho SinhVien
  */
-public class SinhVienManager {
-    
+public class SinhVienManager implements IManager<SinhVien> {
+    private final List<SinhVien> data = new ArrayList<>();
+
+    @Override
+    public void add(SinhVien t) {
+        data.add(t);
+    }
+
+    @Override
+    public void delete(String id) {
+        data.removeIf(s -> s.getMaSV().equals(id));
+    }
+
+    @Override
+    public List<SinhVien> getAll() {
+        return new ArrayList<>(data);
+    }
+
+    public SinhVien findByMa(String ma) {
+        return data.stream().filter(s -> s.getMaSV().equals(ma)).findFirst().orElse(null);
+    }
 }

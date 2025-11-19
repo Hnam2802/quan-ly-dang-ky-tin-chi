@@ -1,13 +1,21 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package model.interfaces;
 
+import model.DangKy;
+import java.util.List;
+
 /**
- *
- * @author Admin
+ * Interface hành vi đăng ký
  */
-public class IDangKy {
-    
+public interface IDangKy {
+    /**
+     * Thực hiện đăng ký; trả về null nếu thành công, hoặc chuỗi mô tả lỗi nếu thất bại.
+     */
+    String register(DangKy dk);
+
+    /**
+     * Hủy đăng ký (theo điều kiện): trả về true nếu hủy thành công.
+     */
+    boolean cancel(DangKy dk);
+
+    List<DangKy> getAll();
 }

@@ -1,13 +1,27 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package view;
 
+import controller.*;
+import javax.swing.*;
+import java.awt.*;
+
 /**
- *
- * @author Admin
+ * MainFrame: chứa JTabbedPane với các panel chức năng.
  */
-public class MainFrame {
-    
+public class MainFrame extends JFrame {
+    public MainFrame(MonHocController monHocController, SinhVienController sinhVienController,
+                     LopHocController lopHocController, DangKyController dangKyController) {
+        setTitle("Quản lý đăng ký học - Swing (Đơn giản)");
+        setSize(900, 600);
+        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        setLocationRelativeTo(null);
+
+        JTabbedPane tabs = new JTabbedPane();
+        tabs.addTab("Môn học", new PanelMonHoc(monHocController));
+        tabs.addTab("Sinh viên", new PanelSinhVien(sinhVienController));
+        tabs.addTab("Lớp học", new PanelLopHoc(lopHocController));
+        tabs.addTab("Đăng ký", new PanelDangKy(dangKyController, sinhVienController, monHocController));
+        tabs.addTab("Sắp xếp ĐK", new PanelSapXep(dangKyController));
+
+        getContentPane().add(tabs, BorderLayout.CENTER);
+    }
 }

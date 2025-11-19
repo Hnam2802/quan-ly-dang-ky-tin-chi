@@ -1,13 +1,32 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package model.manager;
 
+import model.LopHoc;
+import model.interfaces.ILopHoc;
+
+import java.util.ArrayList;
+import java.util.List;
+
 /**
- *
- * @author Admin
+ * Manager cho LopHoc (rất tối giản)
  */
-public class LopHocManager {
-    
+public class LopHocManager implements ILopHoc {
+    private final List<LopHoc> data = new ArrayList<>();
+
+    @Override
+    public void addLop(String maLop, String tenLop) {
+        data.add(new LopHoc(maLop, tenLop));
+    }
+
+    @Override
+    public void deleteLop(String maLop) {
+        data.removeIf(l -> l.getMaLop().equals(maLop));
+    }
+
+    public List<LopHoc> getAll() {
+        return new ArrayList<>(data);
+    }
+
+    public LopHoc findByMa(String ma) {
+        return data.stream().filter(l -> l.getMaLop().equals(ma)).findFirst().orElse(null);
+    }
 }

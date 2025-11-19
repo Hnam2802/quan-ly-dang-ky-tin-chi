@@ -1,13 +1,26 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package model;
 
 /**
- *
- * @author Admin
+ * Sinh viên: giữ đúng thuộc tính yêu cầu
+ * - maSV, hoTen, lop
  */
 public class SinhVien {
-    
+    private String maSV;
+    private String hoTen;
+    private String lop;
+
+    public SinhVien(String maSV, String hoTen, String lop) {
+        this.maSV = maSV;
+        this.hoTen = hoTen;
+        this.lop = lop;
+    }
+
+    public String getMaSV() { return maSV; }
+    public String getHoTen() { return hoTen; }
+    public String getLop() { return lop; }
+
+    @Override
+    public String toString() {
+        return maSV + " - " + hoTen;
+    }
 }

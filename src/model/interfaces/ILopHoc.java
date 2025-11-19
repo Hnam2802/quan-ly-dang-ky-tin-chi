@@ -1,13 +1,9 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package model.interfaces;
 
 /**
- *
- * @author Admin
+ * Interface tối giản cho lop hoc theo yêu cầu.
  */
-public class ILopHoc {
-    
+public interface ILopHoc {
+    void addLop(String maLop, String tenLop);
+    void deleteLop(String maLop);
 }
