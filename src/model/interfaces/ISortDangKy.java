@@ -8,5 +8,5 @@ import java.util.List;
  */
 public interface ISortDangKy {
     List<DangKy> sortBySinhVien(List<DangKy> list);
-    List<DangKy> sortByMonHoc(List<DangKy> list);
+    List<DangKy> sortByThoiGian(List<DangKy> list);
 }

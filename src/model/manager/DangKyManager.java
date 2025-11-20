@@ -1,5 +1,6 @@
 package model.manager;
 
+import java.time.LocalDateTime;
 import model.DangKy;
 import model.interfaces.IDangKy;
 import model.MonHoc;
@@ -44,6 +45,7 @@ public class DangKyManager implements IDangKy {
         if (trùng) return "Đã đăng ký môn này cho học kỳ/năm tương ứng";
 
         // Thêm
+        dk.setThoiGianDK(LocalDateTime.now());
         data.add(dk);
         return null;
     }
@@ -63,6 +65,10 @@ public class DangKyManager implements IDangKy {
         return new ArrayList<>(data);
     }
 
+    public SinhVienManager getSvManager() {
+        return svManager;
+    }
+    
     public List<DangKy> findBySinhVien(String maSV) {
         List<DangKy> out = new ArrayList<>();
         for (DangKy d : data) if (d.getSinhVien().getMaSV().equals(maSV)) out.add(d);

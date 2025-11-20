@@ -9,7 +9,8 @@ import java.awt.*;
  */
 public class MainFrame extends JFrame {
     public MainFrame(MonHocController monHocController, SinhVienController sinhVienController,
-                     LopHocController lopHocController, DangKyController dangKyController) {
+                     LopHocController lopHocController, DangKyController dangKyController,
+                     SortController sortController) {
         setTitle("Quản lý đăng ký học - Swing (Đơn giản)");
         setSize(900, 600);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -20,7 +21,7 @@ public class MainFrame extends JFrame {
         tabs.addTab("Sinh viên", new PanelSinhVien(sinhVienController));
         tabs.addTab("Lớp học", new PanelLopHoc(lopHocController));
         tabs.addTab("Đăng ký", new PanelDangKy(dangKyController, sinhVienController, monHocController));
-        tabs.addTab("Sắp xếp ĐK", new PanelSapXep(dangKyController));
+        tabs.addTab("Sắp xếp ĐK", new PanelSapXep(sortController, dangKyController));
 
         getContentPane().add(tabs, BorderLayout.CENTER);
     }

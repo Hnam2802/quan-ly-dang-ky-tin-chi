@@ -14,7 +14,11 @@ public class SinhVien {
         this.hoTen = hoTen;
         this.lop = lop;
     }
-
+    public SinhVien(String maSV, String hoTen){
+        this.maSV = maSV;
+        this.hoTen = hoTen;
+    }
+    
     public String getMaSV() { return maSV; }
     public String getHoTen() { return hoTen; }
     public String getLop() { return lop; }
